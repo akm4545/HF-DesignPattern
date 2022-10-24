@@ -13,6 +13,16 @@ public abstract class Duck {
 	
 	public Duck() {}
 	
+	//동적으로 나는 행동을 바꾸기 위해 추가
+	public void setFlyBehavior(FlyBehavior flyBehavior) {
+		this.flyBehavior = flyBehavior;
+	}
+
+	//동적으로 우는 행동을 바꾸기 위해 추가
+	public void setQuackBehavior(QuackBehavior quackBehavior) {
+		this.quackBehavior = quackBehavior;
+	}
+
 	//오리의 모습을 자식 클래스가 적절히 구현
 	public abstract void display();
 	
