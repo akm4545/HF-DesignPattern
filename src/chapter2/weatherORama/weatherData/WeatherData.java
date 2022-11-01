@@ -33,13 +33,21 @@ public class WeatherData implements Subject{
 	}
 
 	//변경사항을 알림
-	//옵저버 인터페이스를 구현한 클래스의 update를 호출
+	//옵저버 인터페이스를 구현한 클래스의 update를 호출 (push방식: subject -> observer)
 	@Override
 	public void notifyObserver() {
 		for(Observer observer : observers) {
 			observer.update(temperature, humidity, pressure);
 		}
 	}
+	
+	//옵저버 인터페이스를 구현한 클래스의 update를 호출 (pull방식: observer -> subject)
+//	@Override
+//	public void notifyObserver() {
+//		for(Observer observer : observers) {
+//			observer.update();
+//		}
+//	}
 	
 	//가상 스테이션의 갱신된 측정값을 받으면 옵저버들에게 알림
 	public void measurementsChange() {
@@ -55,5 +63,18 @@ public class WeatherData implements Subject{
 		
 		//옵저버들에게 알림
 		measurementsChange();
+	}
+	
+	//pull 방식에서 사용할 getter메소드
+	public float getTemperature() {
+		return temperature;
+	}
+	
+	public float getHumidity() {
+		return humidity;
+	}
+	
+	public float getPressure() {
+		return pressure;
 	}
 }

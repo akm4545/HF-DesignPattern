@@ -22,7 +22,7 @@ public class CurrentConditionDisplay implements Observer, DisplayElement{
 	}
 
 	//변경사항을 받을 update메서드
-	//값을 받아 적절히 처리한다
+	//값을 받아 적절히 처리한다 (push 방식 : subject -> observer)
 	@Override
 	public void update(float temperature, float humidity, float pressure) {
 		this.temperature = temperature;
@@ -30,4 +30,12 @@ public class CurrentConditionDisplay implements Observer, DisplayElement{
 		display();
 	}
 
+	//변경사항을 받을 update메서드
+	//값을 받아 적절히 처리한다 (pull 방식 : observer -> subject)
+//	@Override
+//	public void update() {
+//		this.temperature = weatherData.getTemperature();
+//		this.humidity = weatherData.getHumidity();
+//		display();
+//	}
 }
