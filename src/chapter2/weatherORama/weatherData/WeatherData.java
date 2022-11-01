@@ -32,6 +32,8 @@ public class WeatherData implements Subject{
 		observers.remove(o);
 	}
 
+	//변경사항을 알림
+	//옵저버 인터페이스를 구현한 클래스의 update를 호출
 	@Override
 	public void notifyObserver() {
 		for(Observer observer : observers) {
@@ -39,15 +41,19 @@ public class WeatherData implements Subject{
 		}
 	}
 	
+	//가상 스테이션의 갱신된 측정값을 받으면 옵저버들에게 알림
 	public void measurementsChange() {
 		notifyObserver();
 	}
 	
+	//받아온 값을 weatherData에 저장하는 부분
 	public void setMeasurements(float temperature, float humidity, float pressure) {
+		//저장하고
 		this.temperature = temperature;
 		this.humidity = humidity;
 		this.pressure = pressure;
 		
+		//옵저버들에게 알림
 		measurementsChange();
 	}
 }
