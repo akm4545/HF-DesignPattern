@@ -1,6 +1,7 @@
 package chapter2.weatherORama;
 
 import chapter2.weatherORama.display.CurrentConditionDisplay;
+import chapter2.weatherORama.display.HeatIndexDisplay;
 import chapter2.weatherORama.weatherData.WeatherData;
 
 //옵저버 패턴 (Observer pattern)
@@ -13,6 +14,7 @@ public class WeatherStation {
 		
 		//display를 생성하면서 subject를 구현한 weatherData를 넘겨 observer로 등록 
 		CurrentConditionDisplay currentConditionDisplay = new CurrentConditionDisplay(weatherData);
+		HeatIndexDisplay heatIndexDisplay = new HeatIndexDisplay(weatherData);
 		
 		//weatherData에 값을 변경하면 등록된 observer들이 구현한 update메소드를 호출하여 알림
 		weatherData.setMeasurements(80, 65, 30.4f);
