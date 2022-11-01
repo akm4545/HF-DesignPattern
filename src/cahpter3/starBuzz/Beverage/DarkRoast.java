@@ -9,8 +9,15 @@ public class DarkRoast extends Beverage{
 	}
 
 	//자기 자신의 값만 리턴함
+	//사이즈 별 값 return
 	@Override
 	public double cost() {
+		if(getSize().equals(Size.GRANDE)) {
+			return 2.10;
+		}else if(getSize().equals(Size.VENTI)) {
+			return 2.20;
+		}
+		
 		return 2.00;
 	}
 }

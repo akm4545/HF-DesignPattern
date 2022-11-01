@@ -1,6 +1,7 @@
 package cahpter3.starBuzz;
 
 import cahpter3.starBuzz.Beverage.Beverage;
+import cahpter3.starBuzz.Beverage.Beverage.Size;
 import cahpter3.starBuzz.Beverage.DarkRoast;
 import cahpter3.starBuzz.Beverage.Espresso;
 import cahpter3.starBuzz.Beverage.HouseBlend;
@@ -27,6 +28,7 @@ public class StartBuzzCoffee {
 		//2.생성하면서 먼저 만들었던 Beverage를 확장하며 만들었던 다크 로스트를 모카 객체에 저장한다.
 		//3.생성된 다크 로스트를 감싸고 있는 모카 객체를 beverage2 변수에 덮어씌운다.
 		//4.모두 같은 클래스를 확장했으므로 다형성으로 무리없이 감쌀 수 있다.
+		beverage2.setSize(Size.GRANDE);
 		beverage2 = new Mocha(beverage2);
 		
 		//이하 반복
