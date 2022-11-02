@@ -3,11 +3,11 @@ package chapter4.pizzaMaker;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Pizza {
-	String name;
-	String dough;
-	String sauce;
-	List<String> toppings = new ArrayList<String>();
+public abstract class Pizza {
+	public String name;
+	public String dough;
+	public String sauce;
+	public List<String> toppings = new ArrayList<String>();
 	
 	public String getName() {
 		return name;
