@@ -8,6 +8,7 @@ import chapter4.pizzaMaker.PizzaStore;
 import chapter4.pizzaMaker.ingredient.NYPizzaIngredientFactory;
 import chapter4.pizzaMaker.ingredient.PizzaIngredientFactory;
 
+//팩포리 메소드 패턴
 public class NYPizzaStore extends PizzaStore{
 //	@Override
 //	public Pizza createPizza(String item) {

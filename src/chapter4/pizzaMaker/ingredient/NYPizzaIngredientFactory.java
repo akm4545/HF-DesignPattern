@@ -1,6 +1,7 @@
 package chapter4.pizzaMaker.ingredient;
 
-//팩토르릴 구현한 서브 클래스
+//팩토리를 구현한 서브 클래스
+//추상 팩토리 패턴
 public class NYPizzaIngredientFactory implements PizzaIngredientFactory{
 
 	@Override
