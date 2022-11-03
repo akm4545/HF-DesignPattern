@@ -3,10 +3,24 @@ package chapter5.chocolate;
 public class ChocolateBoiler {
 	private boolean empty;
 	private boolean boiled;
+	private static ChocolateBoiler chocolateBoiler;
+	
+//	ChocolateBoiler() {
+//		empty = true;
+//		boiled = false;
+//	}
 	
 	private ChocolateBoiler() {
 		empty = true;
 		boiled = false;
+	}
+	
+	public static ChocolateBoiler getInstance() {
+		if(chocolateBoiler == null) {
+			chocolateBoiler = new ChocolateBoiler();
+		}
+		
+		return chocolateBoiler;
 	}
 	
 	public void fill() {
