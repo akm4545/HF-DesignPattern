@@ -1,26 +1,25 @@
 package chapter4.pizzaMaker.ingredient;
 
-//팩토르릴 구현한 서브 클래스
-public class NYPizzaIngredientFactory implements PizzaIngredientFactory{
+public class ChicagoPizzaIngredientFactory implements PizzaIngredientFactory{
 
 	@Override
 	public Dough createDough() {
-		return new ThinCrustDough();
+		return new ThickCrustDough();
 	}
 
 	@Override
 	public Sauce createSauce() {
-		return new MarinaraSauce();
+		return new PlumTomatoSauce();
 	}
 
 	@Override
 	public Cheese createCheese() {
-		return new ReggianoCheese();
+		return new MozzarellaCheese();
 	}
 
 	@Override
 	public Veggies[] createVeggies() {
-		Veggies veggies[] = {new Garlic(), new Onion(), new Mushroom(), new RedPepper()};
+		Veggies veggies[] = {new BlackOlives(), new Spinach(), new Eggplant()};
 		return veggies;
 	}
 
@@ -31,7 +30,7 @@ public class NYPizzaIngredientFactory implements PizzaIngredientFactory{
 
 	@Override
 	public Clams createClams() {
-		return new FreshClams();
+		return new FrozenClams();
 	}
-	
+
 }
