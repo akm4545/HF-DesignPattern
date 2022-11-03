@@ -7,6 +7,10 @@ import chapter4.pizzaMaker.chicagoPizza.ChicagoPizzaStore;
 //객체를 생성할 때 필요한 인터페이스를 만든다.
 //어떤 클래스의 인스턴스를 만들지는 서브클래스에서 결정한다.
 //팩토리 메소드 패턴을 사용하면 클래스 인스턴스 만드는 일을 서브클래스에게 맡기게 된다.
+
+//추상 팩토리 패턴(Abstract Factory Pattern)
+//구상 클래스에 의존하지 않고도 서로 연관되거나 의존적인 객체로 이루어진 제품군을 생산하는 인터페이스를 제공
+//구상 클래스는 서브클래스에서 만든다.
 public class PizzaTestDrive {
 	public static void main(String[] args) {
 		//팩토리들 
