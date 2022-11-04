@@ -10,14 +10,18 @@ public class RemoteControlTest {
 		
 		//요청을 받아서 처리할 리시버 객체를 생성
 		Light light = new Light();
+		GarageDoor garageDoor = new GarageDoor();
 		
 		//커맨드 객체를 생성 -> 이때 리시버를 전달
 		LightOnCommand lightOn = new LightOnCommand(light);
+		GarageDoorOpenCommand garageOpen = new GarageDoorOpenCommand(garageDoor);
 		
 		//커맨드 객체를 인보커에게 전달
 		remote.setCommand(lightOn);
 		
 		//버튼 누름
+		remote.buttonWasPressed();
+		remote.setCommand(garageOpen);
 		remote.buttonWasPressed();
 		
 		//1. 요청을 처리할 리시버 객체를 생성한다.
