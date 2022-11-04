@@ -1,5 +1,8 @@
 package chapter6.remote;
 
+//커맨드 패턴(Command Pattern)
+//요청 내역을 객체로 캡슐화해서 객체를 서로 다른 요청 내역에 따라 매개변수화할 수 있다.
+//요청을 큐에 저장하거나 로그로 기록하거나 작업 취소 기능을 사용할 수 있다.
 public class RemoteControlTest {
 	public static void main(String[] args) {
 		//커맨드 패턴에서 클라이언트에 해당하는 부분
