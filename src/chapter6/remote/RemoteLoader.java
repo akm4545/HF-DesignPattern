@@ -57,5 +57,22 @@ public class RemoteLoader {
 		
 		remoteControl.setCommand(0, ceilingFanMedium, ceilingFanOff);
 		remoteControl.setCommand(1, ceilingFanHigh, ceilingFanOff);
+		
+		TV tv = new TV("Living Room");
+		Hottub hottub = new Hottub();
+		
+		TVOnCommand tvOn = new TVOnCommand(tv);
+		HottubeOnCommand hottubOn = new HottubeOnCommand(hottub);
+		
+		TVOffCommand tvOff = new TVOffCommand(tv);
+		HottubeOffCommand hottubOff = new HottubeOffCommand(hottub);
+		
+		Command[] partyOn = {livingRoomLightOn, stereoOnWithCD, tvOn, hottubOn};
+		Command[] partyOff = {livingRoomLightOff, stereoOff, tvOff, hottubOff};
+		
+		MacroCommand partyOnMacro = new MacroCommand(partyOn);
+		MacroCommand partyOffMacro = new MacroCommand(partyOff);
+		
+		remoteControl.setCommand(0, partyOnMacro, partyOffMacro);
 	}
 }
