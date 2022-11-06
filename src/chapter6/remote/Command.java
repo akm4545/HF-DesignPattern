@@ -5,4 +5,5 @@ package chapter6.remote;
 //실행 명령을 내릴 execute 메소드 하나만 있으면 된다
 public interface Command {
 	public void execute();
+	public void undo();
 }
