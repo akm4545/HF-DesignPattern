@@ -1,5 +1,8 @@
 package chapter7.homeTheater;
 
+//퍼사드 패턴(Facade Pattern)
+//서브 시스템에 있는 일련의 인터페이스를 통합 인터페이스로 묶어준다
+//또한 고수준 인퍼에티스도 정의하므로 서브 시스템을 더 편리하게 사용할 수 있다.
 public class HomeTheaterTestDrive {
 	public static void main(String[] args) {
 		Amplifier amp = new Amplifier("Amplifier");

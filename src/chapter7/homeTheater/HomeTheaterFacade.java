@@ -1,6 +1,8 @@
 package chapter7.homeTheater;
 
 public class HomeTheaterFacade {
+	//구성부분 
+	//서브 시스템의 모든 구성 요소가 인스턴스 변수 형태로 저장
 	Amplifier amp;
 	Tuner tuner;
 	StreamingPlayer player;
@@ -9,6 +11,7 @@ public class HomeTheaterFacade {
 	Screen screen;
 	PopcornPopper popper;
 	
+	//퍼사드의 생성자에는 서브 시스템 구성 요소의 레퍼런스가 전달 -> 저장
 	public HomeTheaterFacade(Amplifier amp, Tuner tuner, StreamingPlayer player, Projector projector, Screen screen, TheaterLights lights, PopcornPopper popper) {
 		this.amp = amp;
 		this.tuner = tuner;
