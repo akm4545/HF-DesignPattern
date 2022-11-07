@@ -16,6 +16,7 @@ public class CoffeeWithHook extends CaffeineBaverageWithHook{
 		System.out.println("우유와 설탕을 추가하는 중");
 	}
 
+	//후크 오버라이드
 	public boolean customerWantsCondiments() {
 		String answer = getUserInput();
 		
