@@ -1,5 +1,6 @@
 package chapter8.barista;
 
+//Coffee 클래스와 Tea 클래스가 공통으로 사용하는 메서드를 분리
 public abstract class CaffeineBeverage {
 	
 	final void prepareRecipe() {
@@ -9,6 +10,7 @@ public abstract class CaffeineBeverage {
 		addCondiments();
 	}
 	
+	//공통이 아닌 부분은 서브 클래스에서 정의하도록 함
 	abstract void brew();
 	
 	abstract void addCondiments();

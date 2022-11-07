@@ -1,6 +1,7 @@
 package chapter8.barista;
 
 //public class Coffee {
+//공통 부분을 상속받음
 public class Coffee extends CaffeineBeverage{
 	
 //	void prepareRecipe() {
@@ -26,6 +27,7 @@ public class Coffee extends CaffeineBeverage{
 //		System.out.println("설탕과 우유를 추가하는 중");
 //	}
 	
+	//공통이 아닌 부분만 정의
 	@Override
 	void brew() {
 		System.out.println("필터로 커피를 우려내는 중");
