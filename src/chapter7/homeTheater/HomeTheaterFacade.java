@@ -22,6 +22,7 @@ public class HomeTheaterFacade {
 		this.popper = popper;
 	}
 	
+	//일일히 수동으로 했던 작업을 순서대로 처리함
 	public void watchMovie(String movie) {
 		System.out.println("영화 볼 준비 중");
 		popper.on();
