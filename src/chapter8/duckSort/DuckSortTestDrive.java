@@ -1,5 +1,7 @@
 package chapter8.duckSort;
 
+import java.util.Arrays;
+
 public class DuckSortTestDrive {
 	public static void main(String[] args) {
 		Duck[] ducks = {
@@ -13,6 +15,9 @@ public class DuckSortTestDrive {
 		
 		System.out.println("정렬 전:");
 		display(ducks);
+		
+		//팩토리 메소드 패턴
+		Arrays.sort(ducks);
 		
 		System.out.println("\n정렬 후:");
 		display(ducks);
