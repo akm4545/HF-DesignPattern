@@ -3,6 +3,7 @@ package chapter9.menu;
 import java.util.ArrayList;
 import java.util.List;
 
+//MenuItem을 List로 담아 사용하고 있음
 public class PancakeHouseMenu {
 	List<MenuItem> menuItems;
 	
@@ -20,6 +21,7 @@ public class PancakeHouseMenu {
 		menuItems.add(menuItem);
 	}
 	
+	//List를 리턴함
 //	public List<MenuItem> getMenuItems(){
 //		return menuItems;
 //	}

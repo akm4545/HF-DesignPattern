@@ -1,5 +1,6 @@
 package chapter9.menu;
 
+//반복을 캡슐화하기 위한 인터페이스를 구현하여 제공
 public class DinerMenuIterator implements Iterator{
 	MenuItem[] items;
 	int position = 0;

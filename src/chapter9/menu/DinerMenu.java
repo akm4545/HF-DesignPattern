@@ -1,5 +1,6 @@
 package chapter9.menu;
 
+//MenuItem 목록을 배열로 사용하고 있음
 public class DinerMenu {
 	static final int MAX_ITEMS = 6;
 	int numberOfItems = 0;
@@ -25,10 +26,12 @@ public class DinerMenu {
 		}
 	}
 	
+	//메뉴들을 불러올때 배열을 리턴함
 //	public MenuItem[] getMenuItems() {
 //		return menuItems;
 //	}
 	
+	//디너 메뉴든 팬케이크 메뉴든 똑같은 인터페이스를 반환하여 캡슐화
 	public Iterator createIterator() {
 		return new DinerMenuIterator(menuItems);
 	}

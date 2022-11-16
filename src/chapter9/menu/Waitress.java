@@ -1,5 +1,6 @@
 package chapter9.menu;
 
+//반복을 캡슐화 하였기 때문에 배열이나 List의 반환 타입을 신경 쓸 필요 없음
 public class Waitress {
 	PancakeHouseMenu pancakeHouseMenu;
 	DinerMenu dinerMenu;
