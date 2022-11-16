@@ -5,6 +5,7 @@ public class Waitress {
 //	PancakeHouseMenu pancakeHouseMenu;
 //	DinerMenu dinerMenu;
 	
+	//종업원 클래스와 구상 클래스 사이의 의존성을 줄이기 위해 인터페이스에 맞춤
 	Menu pancakeHouseMenu;
 	Menu dinerMenu;
 	

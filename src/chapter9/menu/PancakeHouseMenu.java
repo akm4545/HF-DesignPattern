@@ -27,10 +27,12 @@ public class PancakeHouseMenu implements Menu{
 //		return menuItems;
 //	}
 	
+	//인터페이스를 정의해서 사용하지 않음
 //	public Iterator createIterator() {
 //		return new PancakeHouseIterator(menuItems);
 //	}
 	
+	//자바에서 제공해주는 Iterator인터페이스를 사용
 	public Iterator<MenuItem> createIterator(){
 		return menuItems.iterator();
 	}
