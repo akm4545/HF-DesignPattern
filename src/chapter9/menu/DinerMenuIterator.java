@@ -1,7 +1,7 @@
 package chapter9.menu;
 
 //반복을 캡슐화하기 위한 인터페이스를 구현하여 제공
-public class DinerMenuIterator implements Iterator{
+public class DinerMenuIterator implements java.util.Iterator<MenuItem>{
 	MenuItem[] items;
 	int position = 0;
 	
@@ -26,4 +26,7 @@ public class DinerMenuIterator implements Iterator{
 		return menuItem;
 	}
 	
+	public void remove() {
+		throw new UnsupportedOperationException("메뉴 항목은 지우면 안됩니다.");
+	}
 }
