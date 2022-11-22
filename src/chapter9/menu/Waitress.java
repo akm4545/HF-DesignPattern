@@ -8,20 +8,25 @@ public class Waitress {
 	//종업원 클래스와 구상 클래스 사이의 의존성을 줄이기 위해 인터페이스에 맞춤
 	Menu pancakeHouseMenu;
 	Menu dinerMenu;
+	Menu cafeMenu;
 	
-	public Waitress(Menu pancakeHouseMenu, Menu dinerMenu) {
+	public Waitress(Menu pancakeHouseMenu, Menu dinerMenu, Menu cafeMenu) {
 		this.pancakeHouseMenu = pancakeHouseMenu;
 		this.dinerMenu = dinerMenu;
+		this.cafeMenu = cafeMenu;
 	}
 	
 	public void printMenu() {
 		java.util.Iterator<MenuItem> pancakeIterator = pancakeHouseMenu.createIterator();
 		java.util.Iterator<MenuItem> dinerIterator = dinerMenu.createIterator();
+		java.util.Iterator<MenuItem> cafeIterator = cafeMenu.createIterator();
 		
 		System.out.println("메뉴\n----\n아침 메뉴");
 		printMenu(pancakeIterator);
 		System.out.println("\n점심 메뉴");
 		printMenu(dinerIterator);
+		System.out.println("\n저녁 메뉴");
+		printMenu(cafeIterator);
 	}
 	
 	private void printMenu(java.util.Iterator<MenuItem> iterator) {

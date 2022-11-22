@@ -8,9 +8,10 @@ public class MenuTestDrive {
 		//메뉴들을 생성하고
 		PancakeHouseMenu pancakeHouseMenu = new PancakeHouseMenu();
 		DinerMenu dinerMenu = new DinerMenu();
+		CafeMenu cafeMenu = new CafeMenu();
 		
 		//종업원에게 넘긴 뒤
-		Waitress waitress = new Waitress(pancakeHouseMenu, dinerMenu);
+		Waitress waitress = new Waitress(pancakeHouseMenu, dinerMenu, cafeMenu);
 		
 		//출력
 		waitress.printMenu();

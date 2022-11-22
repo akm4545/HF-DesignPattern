@@ -22,6 +22,7 @@ public class CafeMenu implements Menu{
 //		return menuItems;
 //	}
 
+	//Map으로 구현했어도 Iterator를 사용 가능 -> 값을 대상으로 함
 	@Override
 	public Iterator<MenuItem> createIterator() {
 		return menuItems.values().iterator();
