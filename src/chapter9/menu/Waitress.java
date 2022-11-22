@@ -14,7 +14,9 @@ public class Waitress {
 //	Menu cafeMenu;
 	
 	//메뉴를 List에 담아 처리함으로서 새로 생기는 메뉴가 생겨도 수정하지 않아도 됨
-	List<Menu> menus;
+//	List<Menu> menus;
+	
+	MenuComponent allMenus;
 	
 //	public Waitress(Menu pancakeHouseMenu, Menu dinerMenu, Menu cafeMenu) {
 //		this.pancakeHouseMenu = pancakeHouseMenu;
@@ -22,8 +24,12 @@ public class Waitress {
 //		this.cafeMenu = cafeMenu;
 //	}
 	
-	public Waitress(List<Menu> menus) {
-		this.menus = menus;
+//	public Waitress(List<Menu> menus) {
+//		this.menus = menus;
+//	}
+	
+	public Waitress(MenuComponent allMenu) {
+		this.allMenus = allMenu;
 	}
 	
 //	public void printMenu() {
@@ -40,23 +46,27 @@ public class Waitress {
 //	}
 	
 	//List의 Iterator를 가져와 반복으로 처리
-	public void printMenu() {
-		Iterator<Menu> menuIterator = menus.iterator();
-		
-		while(menuIterator.hasNext()) {
-			Menu menu = menuIterator.next();
-			printMenu(menu.createIterator());
-		}
-	}
+//	public void printMenu() {
+//		Iterator<Menu> menuIterator = menus.iterator();
+//		
+//		while(menuIterator.hasNext()) {
+//			Menu menu = menuIterator.next();
+//			printMenu(menu.createIterator());
+//		}
+//	}
 	
 	//각각 알맞게 구현한 Iterator를 받아와 작업
-	private void printMenu(java.util.Iterator<MenuItem> iterator) {
-		while(iterator.hasNext()) {
-			MenuItem menuItem = iterator.next();
-			
-			System.out.println(menuItem.getName() + ", ");
-			System.out.println(menuItem.getPrice() + " -- ");
-			System.out.println(menuItem.getDescription());
-		}
+//	private void printMenu(java.util.Iterator<MenuItem> iterator) {
+//		while(iterator.hasNext()) {
+//			MenuItem menuItem = iterator.next();
+//			
+//			System.out.println(menuItem.getName() + ", ");
+//			System.out.println(menuItem.getPrice() + " -- ");
+//			System.out.println(menuItem.getDescription());
+//		}
+//	}
+	
+	public void printMenu() {
+		allMenus.print();
 	}
 }

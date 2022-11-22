@@ -1,6 +1,6 @@
 package chapter9.menu;
 
-public class MenuItem {
+public class MenuItem extends MenuComponent{
 	String name;
 	String description;
 	boolean vegetarian;
@@ -27,5 +27,16 @@ public class MenuItem {
 	
 	public boolean isVegetarian() {
 		return vegetarian;
+	}
+	
+	public void print() {
+		System.out.println(" " + getName());
+		
+		if(isVegetarian()) {
+			System.out.println("(v)");
+		}
+		
+		System.out.println(", " + getPrice());
+		System.out.println("      -- " + getDescription());
 	}
 }
