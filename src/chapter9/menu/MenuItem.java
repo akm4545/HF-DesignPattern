@@ -1,5 +1,7 @@
 package chapter9.menu;
 
+//리프에 해당하는 클래스 
+//MenuComponent 확장
 public class MenuItem extends MenuComponent{
 	String name;
 	String description;
@@ -29,6 +31,7 @@ public class MenuItem extends MenuComponent{
 		return vegetarian;
 	}
 	
+	//메뉴 컴포넌트의 print를 오버라이드
 	public void print() {
 		System.out.println(" " + getName());
 		

@@ -11,6 +11,7 @@ import java.util.List;
 //}
 
 public class Menu extends MenuComponent{
+	//MenuComponent형을 저장 할 수 있음 - 자식 노드
 	List<MenuComponent> menuComponents = new ArrayList<MenuComponent>();
 	String name;
 	String description;
@@ -20,6 +21,7 @@ public class Menu extends MenuComponent{
 		this.description = description;
 	}
 	
+	//MenuItem이나 다른 Menu를 추가하는 코드
 	public void add(MenuComponent menuComponent) {
 		menuComponent.add(menuComponent);
 	}
@@ -45,6 +47,7 @@ public class Menu extends MenuComponent{
 		System.out.println(", " + getDescription());
 		System.out.println("----------------------");
 		
+		//자기 자신이 가지고 있는 노드들의 print 호출
 		for(MenuComponent menuComponent : menuComponents) {
 			menuComponent.print();
 		}

@@ -26,17 +26,21 @@ public class MenuTestDrive {
 		//출력
 //		waitress.printMenu();
 		
+		//컴포지트 패턴으로 리프 객체를 만든다
 		MenuComponent pancakeHouseMenu = new Menu("팬케이크 하우스 메뉴", "아침 메뉴");
 		MenuComponent dinerMenu = new Menu("객체마을 식당 메뉴", "점심 메뉴");
 		MenuComponent cafeMenu = new Menu("카페 메뉴", "저녁 메뉴");
 		MenuComponent dessertMenu = new Menu("디저트 메뉴", "디저트를 즐겨 보세요.");
 		
+		//최상위 노드 객체를 만든다
 		MenuComponent allMenus = new Menu("전체 메뉴", "전체 메뉴");
 		
+		//최상위 노드 객체에 리프 객체 저장
 		allMenus.add(pancakeHouseMenu);
 		allMenus.add(dinerMenu);
 		allMenus.add(cafeMenu);
 		
+		//리프 객체에 리프 객체 저장
 		dinerMenu.add(new MenuItem("파스타", "마리나라 소스 스파게티, 효모빵도 드립니다.", true, 3.89));
 		dinerMenu.add(dessertMenu);
 		
