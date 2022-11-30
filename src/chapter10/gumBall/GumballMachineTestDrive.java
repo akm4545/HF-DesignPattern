@@ -1,5 +1,8 @@
 package chapter10.gumBall;
 
+//상태 패턴(State Pattern)
+//객체의 내부 상태가 바뀜에 따라서 객체의 행동을 바꿀 수 있다.
+//마치 객체의 클래스가 바뀌는 것과 같은 결과를 얻을 수 있다.
 public class GumballMachineTestDrive {
 	public static void main(String[] args) {
 		//기계에 알맹이를 5개 넣음

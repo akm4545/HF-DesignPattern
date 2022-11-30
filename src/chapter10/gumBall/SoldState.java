@@ -21,8 +21,10 @@ public class SoldState implements State{
 
 	@Override
 	public void dispense() {
+		//알맹이를 뽑고
 		gumballMachine.releaseBall();
 		
+		//남은 알맹이의 갯수에 따라 상태를 결정한다.
 		if(gumballMachine.getCount() > 0) {
 			gumballMachine.setState(gumballMachine.getNoQuarterState());
 		}else {

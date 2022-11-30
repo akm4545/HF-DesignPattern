@@ -10,6 +10,7 @@ public class GumballMachine {
 	//초기 상태
 //	int state = SOLD_OUT;
 	
+	//상태를 클래스로 만듦
 	State soldOutState;
 	State noQuarterState;
 	State hasQuarterState;
@@ -20,6 +21,7 @@ public class GumballMachine {
 	
 	//생성자
 	public GumballMachine(int numberGumballs) {
+		//상태들을 초기화하면서 저장
 		soldOutState = new SoldOutState(this);
 		noQuarterState = new NoQuarterState(this);
 		hasQuarterState = new HasQuarterState(this);
@@ -27,6 +29,7 @@ public class GumballMachine {
 		
 		this.count = numberGumballs;
 		
+		//생성하면서 넣은 알맹이에 따라 초기 상태를 결정
 		if(numberGumballs > 0) {
 			state = noQuarterState;
 		}else {
@@ -48,6 +51,8 @@ public class GumballMachine {
 //		}
 //	}
 	
+	//현재 지니고 있는 상태의 insertQuarter를 실행한다
+	//조건문으로 구현하지 않고 현재 지정된 state클래스의 insertQuarter를 실행한다
 	public void insertQuarter() {
 		state.insertQuarter();
 	}
@@ -89,6 +94,7 @@ public class GumballMachine {
 		state.dispense();
 	}
 	
+	//상태를 설정한다.
 	void setState(State state) {
 		this.state = state;
 	}
