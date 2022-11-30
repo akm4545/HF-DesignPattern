@@ -1,14 +1,17 @@
 package chapter10.gumBall;
 
 public class GumballMachine {
+	//상태 코드
 	final static int SOLD_OUT = 0;
 	final static int NO_QUARTER = 1;
 	final static int HAS_QUARTER = 2;
 	final static int SOLD = 3;
 	
+	//초기 상태
 	int state = SOLD_OUT;
 	int count = 0;
 	
+	//생성자
 	public GumballMachine(int count) {
 		this.count = count;
 		
@@ -17,6 +20,7 @@ public class GumballMachine {
 		}
 	}
 	
+	//코인을 넣는 메서드
 	public void insertQuarter() {
 		if(state == HAS_QUARTER) {
 			System.out.println("동전은 한 개만 넣어 주세요.");
@@ -30,6 +34,7 @@ public class GumballMachine {
 		}
 	}
 	
+	//동전 반환 메서드
 	public void ejectQuarter() {
 		if(state == HAS_QUARTER) {
 			System.out.println("동전이 반환됩니다.");
@@ -42,6 +47,7 @@ public class GumballMachine {
 		}
 	}
 	
+	//손잡이 돌리는 메서드
 	public void turnCrank() {
 		if(state == SOLD) {
 			System.out.println("손잡이는 한 번만 돌려 주세요.");
@@ -56,6 +62,7 @@ public class GumballMachine {
 		}
 	}
 	
+	//뽑기 메서드
 	public void dispense(){
 		if(state == SOLD) {
 			System.out.println("알맹이를 내보내고 있습니다.");
@@ -76,6 +83,7 @@ public class GumballMachine {
 		}
 	}
 	
+	//알맹이 넣기
 	public void refill(int numGumBalls) {
 		this.count = numGumBalls;
 		state = NO_QUARTER;

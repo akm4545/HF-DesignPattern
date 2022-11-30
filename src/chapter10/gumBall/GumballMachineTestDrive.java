@@ -2,8 +2,10 @@ package chapter10.gumBall;
 
 public class GumballMachineTestDrive {
 	public static void main(String[] args) {
+		//기계에 알맹이를 5개 넣음
 		GumballMachine gumballMachine = new GumballMachine(5);
 		
+		//상태 출력
 		System.out.println(gumballMachine);
 		
 		gumballMachine.insertQuarter();
