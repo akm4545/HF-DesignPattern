@@ -208,4 +208,14 @@ public class GumballMachine {
 //		result.append("\n");
 //		return result.toString();
 //	}
+	
+	public void refill(int gumballCount) {
+		count += gumballCount;
+		
+		if(count > 0) {
+			state = noQuarterState;
+		}else {
+			state = soldOutState;
+		}
+	}
 }
