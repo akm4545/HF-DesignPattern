@@ -1,4 +1,4 @@
-package chapter10.gumBall;
+package chapter11.gumBall;
 
 public class GumballMachine {
 	//상태 코드
@@ -20,8 +20,10 @@ public class GumballMachine {
 	State state = soldOutState;
 	int count = 0;
 	
+	String location;
+	
 	//생성자
-	public GumballMachine(int numberGumballs) {
+	public GumballMachine(String loaction, int numberGumballs) {
 		//상태들을 초기화하면서 저장
 		soldOutState = new SoldOutState(this);
 		noQuarterState = new NoQuarterState(this);
@@ -29,6 +31,7 @@ public class GumballMachine {
 		soldState = new SoldOutState(this);
 		
 		this.count = numberGumballs;
+		this.location = location;
 		
 		//생성하면서 넣은 알맹이에 따라 초기 상태를 결정
 		if(numberGumballs > 0) {
@@ -36,6 +39,10 @@ public class GumballMachine {
 		}else {
 			state = soldOutState;
 		}
+	}
+	
+	public String getLocation() {
+		return location;
 	}
 	
 	//코인을 넣는 메서드
