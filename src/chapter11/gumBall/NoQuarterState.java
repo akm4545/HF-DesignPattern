@@ -2,8 +2,10 @@ package chapter11.gumBall;
 
 //상태를 구현한 클래스
 public class NoQuarterState implements State{
+	private static final long serialVerseionUID = 2L;
+	
 	//뽑기 기계
-	GumballMachine gumballMachine;
+	transient GumballMachine gumballMachine;
 	
 	public NoQuarterState(GumballMachine gumballMachine) {
 		this.gumballMachine = gumballMachine;

@@ -1,6 +1,9 @@
 package chapter11.gumBall;
 
-public class GumballMachine {
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+
+public class GumballMachine extends UnicastRemoteObject implements GumballMachineRemote{
 	//상태 코드
 //	final static int SOLD_OUT = 0;
 //	final static int NO_QUARTER = 1;
@@ -9,6 +12,8 @@ public class GumballMachine {
 	
 	//초기 상태
 //	int state = SOLD_OUT;
+	
+	private static final long serialVersionUID = 2L;
 	
 	//상태를 클래스로 만듦
 	State soldOutState;
@@ -23,7 +28,7 @@ public class GumballMachine {
 	String location;
 	
 	//생성자
-	public GumballMachine(String loaction, int numberGumballs) {
+	public GumballMachine(String loaction, int numberGumballs) throws RemoteException{
 		//상태들을 초기화하면서 저장
 		soldOutState = new SoldOutState(this);
 		noQuarterState = new NoQuarterState(this);
@@ -115,7 +120,7 @@ public class GumballMachine {
 		}
 	}
 	
-	int getCount() {
+	public int getCount() {
 		return count;
 	}
 	

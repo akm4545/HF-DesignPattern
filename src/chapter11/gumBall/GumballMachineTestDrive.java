@@ -1,8 +1,11 @@
 package chapter11.gumBall;
 
+import java.rmi.Naming;
+
 public class GumballMachineTestDrive {
-	public static void main(String[] args) {
-		int count = 0;
+	public static void main(String[] args) {		
+		GumballMachineRemote gumballMachine = null;
+		int count;
 		
 		//매개변수가 부족하면 종료
 		if(args.length < 2) {
@@ -11,49 +14,55 @@ public class GumballMachineTestDrive {
 		}
 		
 		//뽑기기계 초기화
-		count = Integer.parseInt(args[1]);
-		GumballMachine gumballMachine = new GumballMachine(args[0], count);
+		try {
+			count = Integer.parseInt(args[1]);
+			
+			gumballMachine = new GumballMachine(args[0], count);
+			Naming.rebind("//" + args[0] + "/gumballmachine", gumballMachine);
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 		//모니터링 클래스에 뽑기기계 저장
-		GumballMonitor monitor = new GumballMonitor(gumballMachine);
-		
-		System.out.println(gumballMachine);
-
-		gumballMachine.insertQuarter();
-		gumballMachine.turnCrank();
-		gumballMachine.insertQuarter();
-		gumballMachine.turnCrank();
-
-		System.out.println(gumballMachine);
-
-		gumballMachine.insertQuarter();
-		gumballMachine.turnCrank();
-		gumballMachine.insertQuarter();
-		gumballMachine.turnCrank();
-
-		System.out.println(gumballMachine);
-
-		gumballMachine.insertQuarter();
-		gumballMachine.turnCrank();
-		gumballMachine.insertQuarter();
-		gumballMachine.turnCrank();
-
-		System.out.println(gumballMachine);
-
-		gumballMachine.insertQuarter();
-		gumballMachine.turnCrank();
-		gumballMachine.insertQuarter();
-		gumballMachine.turnCrank();
-
-		System.out.println(gumballMachine);
-
-		gumballMachine.insertQuarter();
-		gumballMachine.turnCrank();
-		gumballMachine.insertQuarter();
-		gumballMachine.turnCrank();
-
-		System.out.println(gumballMachine);
-		
-		monitor.report();
+//		GumballMonitor monitor = new GumballMonitor(gumballMachine);
+//		
+//		System.out.println(gumballMachine);
+//
+//		gumballMachine.insertQuarter();
+//		gumballMachine.turnCrank();
+//		gumballMachine.insertQuarter();
+//		gumballMachine.turnCrank();
+//
+//		System.out.println(gumballMachine);
+//
+//		gumballMachine.insertQuarter();
+//		gumballMachine.turnCrank();
+//		gumballMachine.insertQuarter();
+//		gumballMachine.turnCrank();
+//
+//		System.out.println(gumballMachine);
+//
+//		gumballMachine.insertQuarter();
+//		gumballMachine.turnCrank();
+//		gumballMachine.insertQuarter();
+//		gumballMachine.turnCrank();
+//
+//		System.out.println(gumballMachine);
+//
+//		gumballMachine.insertQuarter();
+//		gumballMachine.turnCrank();
+//		gumballMachine.insertQuarter();
+//		gumballMachine.turnCrank();
+//
+//		System.out.println(gumballMachine);
+//
+//		gumballMachine.insertQuarter();
+//		gumballMachine.turnCrank();
+//		gumballMachine.insertQuarter();
+//		gumballMachine.turnCrank();
+//
+//		System.out.println(gumballMachine);
+//		
+//		monitor.report();
 	}
 }
