@@ -1,4 +1,4 @@
-package chapter11.gumBall;
+package chapter11.gumball;
 
 public class SoldState implements State{
 	private static final long serialVerseionUID = 2L;

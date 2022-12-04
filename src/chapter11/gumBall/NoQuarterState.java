@@ -1,4 +1,4 @@
-package chapter11.gumBall;
+package chapter11.gumball;
 
 //상태를 구현한 클래스
 public class NoQuarterState implements State{
