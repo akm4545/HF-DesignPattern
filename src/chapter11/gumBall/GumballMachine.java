@@ -3,6 +3,8 @@ package chapter11.gumBall;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
+//원격 서비스 역할을 하기 위해 UnicastRemoteObject 상속
+//원격 인터페이스 GumballMachineRemote도 구현
 public class GumballMachine extends UnicastRemoteObject implements GumballMachineRemote{
 	//상태 코드
 //	final static int SOLD_OUT = 0;

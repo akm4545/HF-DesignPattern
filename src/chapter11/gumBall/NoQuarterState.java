@@ -2,9 +2,11 @@ package chapter11.gumBall;
 
 //상태를 구현한 클래스
 public class NoQuarterState implements State{
+	//직렬화를 위해 추가
 	private static final long serialVerseionUID = 2L;
 	
 	//뽑기 기계
+	//직렬화 제외 필드를 위해 transient 키워드 추가
 	transient GumballMachine gumballMachine;
 	
 	public NoQuarterState(GumballMachine gumballMachine) {
