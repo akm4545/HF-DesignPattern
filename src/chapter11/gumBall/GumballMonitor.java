@@ -1,5 +1,6 @@
 package chapter11.gumBall;
 
+//새로 추가된 뽑기기계 모니터링 클래스
 public class GumballMonitor {
 	GumballMachine machine;
 	
