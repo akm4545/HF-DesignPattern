@@ -1,5 +1,6 @@
 package chapter11.dating;
 
+//데이팅 어플에서 사용할 사람 클래스
 public class PersonImpl implements Person{
 	
 	String name;
