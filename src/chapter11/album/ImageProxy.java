@@ -7,6 +7,7 @@ import java.net.URL;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
+//진짜 imageComponent가 필요한 상황 전까지 대체할 프록시 객체
 public class ImageProxy implements Icon{
 	volatile ImageIcon imageIcon;
 	final URL imageURL;
@@ -37,6 +38,7 @@ public class ImageProxy implements Icon{
 		this.imageIcon = imageIcon;
 	}
 	
+	//이미지가 불러오기 전에는 대기 메세지를 출력한다.
 	public void paintIcon(final Component c, Graphics g, int x, int y) {
 		if(imageIcon != null) {
 			imageIcon.paintIcon(c, g, x, y);
@@ -59,6 +61,7 @@ public class ImageProxy implements Icon{
 					}
 				});
 				
+				//이미지를 다 가져와야 imageIcon 객체에 셋팅됨
 				retrievalThread.start();
 			}
 		}

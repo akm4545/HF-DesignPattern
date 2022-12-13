@@ -26,6 +26,7 @@ public class ImageComponent extends JComponent{
 		int x = (800 - w) / 2;
 		int y = (600 - h) / 2;
 		
+		//컴포넌트를 그림
 		icon.paintIcon(this, g, x, y);
 	}
 }
