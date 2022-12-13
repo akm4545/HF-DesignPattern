@@ -1,4 +1,4 @@
-package chapter11.gumball;
+package chapter11.gumBall;
 
 import java.util.Random;
 
