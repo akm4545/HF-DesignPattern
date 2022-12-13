@@ -3,20 +3,22 @@ package chapter12.simUduck;
 public class DuckSimulator {
 	public static void main(String[] args) {
 		DuckSimulator simulator = new DuckSimulator();
-		simulator.simulate();
+		AbstractDuckFactory duckFactory = new CountingDuckFactory();
+		
+		simulator.simulate(duckFactory);
 	}
 	
-	void simulate() {
+	void simulate(AbstractDuckFactory duckFactory) {
 //		Quackable mallardDuck = new MallardDuck();
 //		Quackable redheadDuck = new RedheadDuck();
 //		Quackable duckCall = new DuckCall();
 //		Quackable rubberDuck = new RubberDuck();
 		
 		//데코레이터로 감싸서 우는 횟수를 센다
-		Quackable mallardDuck = new QuackCounter(new MallardDuck());
-		Quackable redheadDuck = new QuackCounter(new RedheadDuck());
-		Quackable duckCall = new QuackCounter(new DuckCall());
-		Quackable rubberDuck = new QuackCounter(new RubberDuck());
+		Quackable mallardDuck = duckFactory.createMallardDuck();
+		Quackable redheadDuck = duckFactory.createRedheadDuck();
+		Quackable duckCall = duckFactory.createDuckCall();
+		Quackable rubberDuck = duckFactory.createRubberDuck();
 		Quackable gooseDuck = new GooseAdapter(new Goose());
 		
 		System.out.println("\n오리 시뮬레이션 게임 (+데코레이터)");
