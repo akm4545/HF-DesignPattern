@@ -5,6 +5,14 @@ import java.util.HashMap;
 
 //보호 프록시(Protection Proxy)
 //접근 권한을 바탕으로 객체로의 접근을 제어하는 프록시
+//이 외에도 
+//방화벽 프록시(Firewall Proxy)[일련의 네트워크 자원으로의 접근을 제어, 주제를 나쁜 클라이언트로부터 보호]
+//스마트 레퍼런스 프록시(Smart Reference Proxy)[주제가 참조될 때마다 추가 행동을 제공]
+//캐싱 프록시(Caching Proxy)[비용이 많이 드는 작업의 결과를 임시로 저장한다. 여러 클라이언트에서 결과를 공유하게 해 줌으로써 계산 시간과 네트워크 지연을 줄여 주는 효과도 있다.]
+//동기화 프록시(Synchronication Proxy)[여러 스레드에서 주제에 접근할 때 안전하게 작업을 처리할 수 있게 해 준다.]
+//복잡도 숨김 프록시(Complexity Hiding Proxy)[복잡한 클래스의 집합으로의 접근을 제어하고, 그 복잡도를 숨겨 준다. 퍼사드 프록시(Facade Proxy)라고 부르기도 한다.
+//이 프록시와 퍼사드 패턴의 차이점은 프록시는 접근을 제어하지만 퍼사드 패턴은 대체 인터페이스만 제공한다.]
+//지연 복사 프록시(Copy-On_Write Proxy)[클라이언트에서 필요로 할 때까지 객체가 복사되는 것을 지연시킴으로써 객체의 복사를 제어한다. 변현된 가상 프록시다.]
 public class MatchMakingTestDrive {
 	HashMap<String, Person> datingDB = new HashMap<String, Person>();
 	
