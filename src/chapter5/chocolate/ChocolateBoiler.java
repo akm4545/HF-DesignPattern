@@ -47,7 +47,7 @@ public class ChocolateBoiler {
 //	public static ChocolateBoiler getInstance() {
 //		return chocolateBoiler;
 //	}
-	
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 	//DCL(Double-Checked Locking)을 사용하여 인스턴스가 생성되어 있는지 
 	//확인한 다음 생성되어 있지 않았을 때만 동기화 할 수 있다.
 	//volatile -> 메인 메모리에서 작업을 하므로 가시성 보장
