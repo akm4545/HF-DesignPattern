@@ -49,6 +49,18 @@ public class DuckSimulator {
 		System.out.println("\n오리 시뮬레이션 게임: 물오리 무리");
 		simulate(flockOfMallards);
 		
+		System.out.println("\n오리 시뮬레이션 게임 (+옵저버)");
+		
+		//옵저버를 구현한 학자 클래스
+		Quackologist quackologist = new Quackologist();
+		
+		//오리 무리들을 옵저버에 등록
+		flockOfDucks.registerObserver(quackologist);
+		
+		//무리들이 차례대로 울음
+		//옵저버에 알림
+		simulate(flockOfDucks);
+		
 		//우는 횟수가 static으로 선언되어 있으므로 값을 공유함
 		System.out.println("오리가 소리 낸 횟수: " + QuackCounter.getQuacks() + " 번");
 	}
