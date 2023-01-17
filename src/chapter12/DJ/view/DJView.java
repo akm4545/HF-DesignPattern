@@ -3,8 +3,10 @@ package chapter12.DJ.view;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -15,6 +17,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import chapter12.DJ.controller.ControllerInterface;
 import chapter12.DJ.model.BPMObserver;
 import chapter12.DJ.model.BeatModelInterface;
 import chapter12.DJ.model.BeatObserver;
@@ -128,7 +131,41 @@ public class DJView implements ActionListener, BeatObserver, BPMObserver{
 		
 		controlPanel.add(insideControlPanel);
 		
-		//여기부터
+		bpmLabel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+		bpmOutputLabel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+		
+		controlFrame.getRootPane().setDefaultButton(setBPMButton);
+		controlFrame.getContentPane().add(controlPanel, BorderLayout.CENTER);
+		
+		controlFrame.pack();
+		controlFrame.setVisible(true);
+	}
+	
+	public void enableStopMenuItem() {
+		stopMenuItem.setEnabled(true);
+	}
+	
+	public void disableStopMenuItem() {
+		stopMenuItem.setEnabled(false);
+	}
+	
+	public void enableStartMenuItem() {
+		startMenuItem.setEnabled(true);
+	}
+	
+	public void disableStartMenuItem() {
+		startMenuItem.setEnabled(false);
+	}
+	
+	public void actionPerformed(ActionEvent event) {
+		if(event.getSource() == setBPMButton) {
+			int bpm = Integer.parseInt(bpmTextField.getText());
+			controller.setBPM(bpm);
+		}else if(event.getSource() == increaseBPMButton) {
+			controller.increaseBPM();
+		}else if(event.getSource() == decreaseBPMButton) {
+			controller.decreaseBPM();
+		}
 	}
 	
 	public void updateBPM() {
