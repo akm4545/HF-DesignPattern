@@ -22,6 +22,8 @@ import chapter12.DJ.model.BPMObserver;
 import chapter12.DJ.model.BeatModelInterface;
 import chapter12.DJ.model.BeatObserver;
 
+//뷰 
+//사용자에게 보여주는 화면 및 인터페이스를 조작하는 화면
 public class DJView implements ActionListener, BeatObserver, BPMObserver{
 	BeatModelInterface model;
 	ControllerInterface controller;
@@ -46,6 +48,8 @@ public class DJView implements ActionListener, BeatObserver, BPMObserver{
 		this.controller = controller;
 		this.model = model;
 		
+		//자기 자신을 옵저버로 등록
+		//변화가 생기면 updateBPM 메서드가 실행
 		model.registerObserver((BeatObserver)this);
 		model.registerObserver((BPMObserver)this);
 	}
@@ -88,6 +92,7 @@ public class DJView implements ActionListener, BeatObserver, BPMObserver{
 		startMenuItem = new JMenuItem("Start");
 		menu.add(startMenuItem);
 		
+		//버튼을 누르면 컨트롤러에게 명령 전달
 		startMenuItem.addActionListener((event) -> controller.start());
 		
 		stopMenuItem = new JMenuItem("Stop");

@@ -8,6 +8,8 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.Line;
 
+//모델객체 
+//데이터, 비즈니스 로직 등을 처리
 public class BeatModel implements BeatModelInterface, Runnable{
 	List<BeatObserver> beatObservers = new ArrayList<BeatObserver>();
 	List<BPMObserver> bpmObservers = new ArrayList<BPMObserver>();
@@ -61,10 +63,12 @@ public class BeatModel implements BeatModelInterface, Runnable{
 		return bpm;
 	}
 	
+	//옵저버에 등록
 	public void registerObserver(BeatObserver o) {
 		beatObservers.add(o);
 	}
 	
+	//객체의 변화를 전달
 	public void notifyBeatObservers() {
 		for(int i=0; i<beatObservers.size(); i++) {
 			BeatObserver observer = (BeatObserver)beatObservers.get(i);

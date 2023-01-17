@@ -3,6 +3,8 @@ package chapter12.DJ.controller;
 import chapter12.DJ.model.BeatModelInterface;
 import chapter12.DJ.view.DJView;
 
+//컨트롤러 
+//뷰가 내린 명령을 전달
 public class BeatController implements ControllerInterface{
 	BeatModelInterface model;
 	DJView view;
