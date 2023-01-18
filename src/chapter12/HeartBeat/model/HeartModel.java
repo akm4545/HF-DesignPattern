@@ -6,7 +6,6 @@ import java.util.Random;
 
 import chapter12.DJ.model.BPMObserver;
 import chapter12.DJ.model.BeatObserver;
-import chapter12.simUduck.Observer;
 
 public class HeartModel implements HeartModelInterface, Runnable{
 	List<BeatObserver> beatObservers = new ArrayList<BeatObserver>();

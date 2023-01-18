@@ -4,6 +4,7 @@ import chapter12.DJ.model.BPMObserver;
 import chapter12.DJ.model.BeatModelInterface;
 import chapter12.DJ.model.BeatObserver;
 
+//어텝터 패턴을 이용해서 heart모델을 BPM모델처럼 사용할 수 있도록 변경
 public class HeartAdapter implements BeatModelInterface{
 	HeartModelInterface heart;
 	

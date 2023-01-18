@@ -9,9 +9,11 @@ public class HeartController implements ControllerInterface{
 	HeartModelInterface model;
 	DJView view;
 	
+	//하트모델을 받아 뷰에 어뎁터를 적용한 하트모델을 적용
 	public HeartController(HeartModelInterface model) {
 		this.model = model;
 		
+		//어뎁터를 적용한 하트모델이 getBPM을 호출하면 하트모델의 getRate를 실행하도록 함
 		view = new DJView(this, new HeartAdapter(model));
 		view.createView();
 		view.createControls();
